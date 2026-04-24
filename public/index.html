@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Nossas Histórias — A aventura de Ricardo e Tami do Brasil ao Alasca. Histórias reais, lugares incríveis e muito de vida na estrada." />
+  <meta name="theme-color" content="#C1440E" />
+
+  <!-- Open Graph -->
+  <meta property="og:title"       content="Nossas Histórias — Do Brasil ao Alasca" />
+  <meta property="og:description" content="A aventura de Ricardo e Tami percorrendo as Américas numa Frontier com motor home." />
+  <meta property="og:type"        content="website" />
+  <meta property="og:image"       content="/assets/images/og-cover.jpg" />
+
+  <title>Nossas Histórias | Ricardo e Tami</title>
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="icon" href="/assets/img/frederico.png" type="image/x-icon" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════
+       HEADER
+  ══════════════════════════════════════════════ -->
+  <header class="header" id="header" role="banner">
+    <div class="header__inner">
+
+      <a href="/" class="header__logo" data-link aria-label="Nossas Histórias — Página inicial">
+        <span class="header__logo-principal">Nossas <span>Histórias</span></span>
+  <span class="header__logo-sub">Ricardo & Tami • Do Brasil ao Alasca</span>
+      </a>
+
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" id="nav" role="navigation" aria-label="Menu principal">
+        <a href="/"              class="nav__link" data-link data-pagina="home">Início</a>
+        <a href="/historias"     class="nav__link" data-link data-pagina="historias">Histórias</a>
+        <a href="/lugares"       class="nav__link" data-link data-pagina="lugares">Lugares</a>
+        <a href="/curiosidades"  class="nav__link" data-link data-pagina="curiosidades">Curiosidades</a>
+        <a href="/loja"          class="nav__link" data-link data-pagina="loja">Loja</a>
+        <a href="/contato"       class="nav__link" data-link data-pagina="contato">Contato</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════════════════════
+       APP PRINCIPAL (SPA container)
+  ══════════════════════════════════════════════ -->
+  <main id="app" role="main" aria-live="polite"></main>
+
+  <!-- ══════════════════════════════════════════════
+       HISTORINHA — Chatbot flutuante
+  ══════════════════════════════════════════════ -->
+  <div id="historinha-container" role="complementary" aria-label="Chat com Historinha">
+
+    <!-- Botão de toggle -->
+    <button class="historinha-toggle" id="historinha-toggle" aria-label="Conversar com Historinha" aria-expanded="false">
+      <img class="historinha-toggle__img" src="/assets/img/frederico.png" alt="Frederico" />
+      <span class="historinha-toggle__hint" aria-hidden="true">Oi!, sou Frederico, Fala comigo</span>
+      <span class="historinha-toggle__badge" aria-hidden="true">!</span>
+    </button>
+
+    <!-- Janela do chat -->
+    <div class="historinha-janela historinha-janela--oculta" id="historinha-janela" role="dialog" aria-label="Chat Historinha" aria-modal="false">
+
+      <div class="historinha__header">
+        <div class="historinha__avatar" aria-hidden="true"></div>
+        <div class="historinha__info">
+          <p class="historinha__nome">Frederico</p>
+          <p class="historinha__status">Guia da aventura</p>
+        </div>
+        <button class="historinha__fechar" id="historinha-fechar" aria-label="Fechar chat">✕</button>
+      </div>
+
+      <div class="historinha__mensagens" id="historinha-mensagens" role="log" aria-live="polite" aria-label="Mensagens do chat"></div>
+
+      <div class="historinha__sugestoes" id="historinha-sugestoes" aria-label="Perguntas rápidas"></div>
+
+      <div class="historinha__input-area">
+        <textarea
+          class="historinha__input"
+          id="historinha-input"
+          placeholder="Pergunte sobre a aventura..."
+          rows="1"
+          aria-label="Sua mensagem para Frederico"
+          maxlength="500"
+        ></textarea>
+        <button class="historinha__enviar" id="historinha-enviar" aria-label="Enviar mensagem">➤</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       SCRIPTS (ES Modules)
+  ══════════════════════════════════════════════ -->
+  <script type="module" src="/js/app.js"></script>
+
+</body>
+</html>

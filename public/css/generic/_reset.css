@@ -1,0 +1,69 @@
+/* ═══════════════════════════════════════════════════════════════
+   GENERIC — Reset & Normalize
+   ═══════════════════════════════════════════════════════════════ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--cor-noite);
+  color: var(--cor-areia);
+  font-family: var(--fonte-corpo);
+  font-size: var(--text-base);
+  line-height: 1.7;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input, textarea, select {
+  font: inherit;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--fonte-titulo);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+::selection {
+  background: var(--cor-terra);
+  color: var(--cor-branco);
+}
+
+:focus-visible {
+  outline: 2px solid var(--cor-terra);
+  outline-offset: 3px;
+  border-radius: var(--raio-sm);
+}

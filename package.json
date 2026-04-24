@@ -1,0 +1,16 @@
+{
+  "name": "nossas-historias",
+  "version": "1.0.0",
+  "description": "A aventura de Ricardo & Tami pelo mundo — do Brasil ao Alasca",
+  "main": "src/server/app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server/app.js",
+    "dev": "node --watch src/server/app.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1"
+  }
+}

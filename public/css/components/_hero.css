@@ -1,0 +1,242 @@
+/* ═══════════════════════════════════════════════════════════════
+   COMPONENT — Hero
+   ═══════════════════════════════════════════════════════════════ */
+
+.home-banner {
+  padding-top: calc(var(--header-h) + var(--esp-6));
+  position: relative;
+  z-index: 3;
+}
+
+.home-banner__imagem {
+  display: block;
+  width: min(100%, 1200px);
+  height: auto;
+  max-height: 441px;
+  margin-inline: auto;
+  border-radius: 20px;
+  object-fit: cover;
+  object-position: center;
+  background: var(--cor-noite-media);
+  border: 1px solid rgba(245, 230, 200, 0.12);
+  box-shadow: var(--sombra-md);
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  padding-top: var(--header-h);
+}
+
+/* Home: reduz o espaço entre banner e hero */
+.home-banner + .hero {
+  padding-top: var(--esp-2);
+}
+
+/* Fundo com textura de mapa */
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(193, 68, 14, 0.15) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(45, 106, 79, 0.1) 0%, transparent 50%),
+    linear-gradient(135deg, var(--cor-noite) 0%, var(--cor-noite-media) 100%);
+}
+
+/* Grade de coordenadas decorativa */
+.hero__grade {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(245, 230, 200, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245, 230, 200, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Linha de rota animada */
+.hero__rota {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--cor-terra) 30%,
+    var(--cor-ouro) 60%,
+    var(--cor-verde-clara) 100%
+  );
+  animation: shimmer 4s linear infinite;
+  background-size: 200% auto;
+}
+
+.hero__conteudo {
+  position: relative;
+  z-index: 1;
+  animation: surgir 1s var(--trans-lenta) both;
+}
+
+.hero__etiqueta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--esp-2);
+  font-family: var(--fonte-subtitulo);
+  font-size: var(--text-sm);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--cor-ouro);
+  margin-bottom: var(--esp-6);
+  animation: surgirEsquerda 1s 0.2s var(--trans-lenta) both;
+}
+
+.hero__etiqueta::before {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: var(--cor-ouro);
+}
+
+.hero__titulo {
+  color: var(--cor-neve);
+  margin-bottom: var(--esp-6);
+  animation: surgir 1s 0.3s var(--trans-lenta) both;
+}
+
+.hero__titulo em {
+  display: block;
+  color: var(--cor-terra-clara);
+  font-style: normal;
+}
+
+.hero__descricao {
+  font-size: var(--text-lg);
+  max-width: 560px;
+  margin-bottom: var(--esp-12);
+  animation: surgir 1s 0.5s var(--trans-lenta) both;
+}
+
+.hero__acoes {
+  display: flex;
+  gap: var(--esp-4);
+  flex-wrap: wrap;
+  animation: surgir 1s 0.7s var(--trans-lenta) both;
+}
+
+/* Indicador de rota */
+.hero__indicador {
+  position: absolute;
+  right: var(--esp-8);
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-4);
+  z-index: 1;
+  animation: surgirDireita 1s 0.8s var(--trans-lenta) both;
+}
+
+.hero__ponto {
+  display: flex;
+  align-items: center;
+  gap: var(--esp-3);
+  font-family: var(--fonte-subtitulo);
+  font-size: var(--text-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cor-areia-escura);
+}
+
+.hero__ponto-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--cor-cinza-quente);
+  flex-shrink: 0;
+  position: relative;
+}
+
+/* Linha conectora entre pontos */
+.hero__ponto:not(:last-child) {
+  position: relative;
+}
+
+.hero__ponto:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 18px;
+  width: 1px;
+  height: calc(100% + var(--esp-4) - 10px);
+  background: rgba(245, 230, 200, 0.12);
+}
+
+/* Passado — já percorrido */
+.hero__ponto--passado {
+  opacity: 0.7;
+}
+
+.hero__ponto--passado .hero__ponto-dot {
+  background: var(--cor-verde-clara);
+}
+
+.hero__ponto--passado .hero__ponto-dot::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  border: 1px solid rgba(82, 183, 136, 0.4);
+}
+
+.hero__ponto--passado span:last-child {
+  text-decoration: line-through;
+  text-decoration-color: rgba(82, 183, 136, 0.5);
+}
+
+/* Atual — posição presente */
+.hero__ponto--atual .hero__ponto-dot {
+  background: var(--cor-terra-clara);
+  box-shadow: 0 0 0 4px rgba(232, 96, 26, 0.2);
+  animation: pulsar 2s ease-in-out infinite;
+}
+
+.hero__ponto--atual {
+  color: var(--cor-neve);
+  font-weight: 600;
+}
+
+/* Futuro — ainda por vir */
+.hero__ponto--futuro .hero__ponto-dot {
+  background: transparent;
+  border: 1px dashed rgba(245, 230, 200, 0.25);
+}
+
+.hero__ponto--futuro {
+  opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+  .home-banner {
+    padding-top: calc(var(--header-h) + var(--esp-4));
+  }
+
+  .home-banner + .hero {
+    padding-top: var(--esp-1);
+  }
+
+  .hero__indicador {
+    display: none;
+  }
+  .hero__descricao {
+    font-size: var(--text-base);
+  }
+
+  .hero__acoes {
+    justify-content: center;
+  }
+}

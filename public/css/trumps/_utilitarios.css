@@ -1,0 +1,102 @@
+/* ═══════════════════════════════════════════════════════════════
+   TRUMPS — Utilitários de alta especificidade
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Texto */
+.t-neve     { color: var(--cor-neve) !important; }
+.t-terra    { color: var(--cor-terra-clara) !important; }
+.t-ouro     { color: var(--cor-ouro) !important; }
+.t-verde    { color: var(--cor-verde-clara) !important; }
+.t-suave    { color: var(--cor-areia-escura) !important; }
+.t-centro   { text-align: center !important; }
+.t-esquerda { text-align: left !important; }
+.t-direita  { text-align: right !important; }
+
+/* Display */
+.d-nenhum   { display: none !important; }
+.d-bloco    { display: block !important; }
+.d-flex     { display: flex !important; }
+.d-grid     { display: grid !important; }
+
+/* Visibilidade */
+.invisivel  { visibility: hidden !important; }
+.visivel    { visibility: visible !important; }
+.opaco      { opacity: 0 !important; }
+
+/* Espaçamento */
+.mb-0  { margin-bottom: 0 !important; }
+.mb-4  { margin-bottom: var(--esp-4) !important; }
+.mb-8  { margin-bottom: var(--esp-8) !important; }
+.mb-16 { margin-bottom: var(--esp-16) !important; }
+.mt-4  { margin-top: var(--esp-4) !important; }
+.mt-8  { margin-top: var(--esp-8) !important; }
+
+/* Animações utilitárias */
+.animar-surgir    { animation: surgir 0.6s var(--trans-lenta) both; }
+.animar-delay-1   { animation-delay: 0.1s; }
+.animar-delay-2   { animation-delay: 0.2s; }
+.animar-delay-3   { animation-delay: 0.3s; }
+.animar-delay-4   { animation-delay: 0.4s; }
+.animar-delay-5   { animation-delay: 0.5s; }
+
+/* Separador decorativo */
+.separador {
+  display: flex;
+  align-items: center;
+  gap: var(--esp-4);
+  margin-block: var(--esp-8);
+  color: var(--cor-cinza-quente);
+  font-family: var(--fonte-subtitulo);
+  font-size: var(--text-xs);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.separador::before,
+.separador::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(245,230,200,0.1);
+}
+
+/* ─── Scroll Reveal ──────────────────────────────────────────── */
+
+/* Estado inicial — invisível, aguardando IntersectionObserver */
+.animar-surgir,
+[data-reveal],
+.card,
+.card-curiosidade,
+.card-produto,
+.faixa-rota {
+  opacity: 0;
+  animation-play-state: paused;
+}
+
+/* Quando o observer aciona: elemento se revela */
+.revelado {
+  opacity: 1 !important;
+  animation-play-state: running !important;
+  animation: surgir 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+/* Delays escalonados para grupos */
+.revelado.animar-delay-1 { animation-delay: 0.05s; }
+.revelado.animar-delay-2 { animation-delay: 0.12s; }
+.revelado.animar-delay-3 { animation-delay: 0.19s; }
+.revelado.animar-delay-4 { animation-delay: 0.26s; }
+.revelado.animar-delay-5 { animation-delay: 0.33s; }
+
+  background: linear-gradient(135deg, var(--cor-terra), var(--cor-ouro));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Highlight de texto */
+.destaque-texto {
+  background: linear-gradient(135deg, var(--cor-terra), var(--cor-ouro));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

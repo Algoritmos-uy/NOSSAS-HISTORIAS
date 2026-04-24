@@ -1,0 +1,89 @@
+/* ═══════════════════════════════════════════════════════════════
+   OBJECTS — Layout & Estrutura Reutilizável
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: var(--largura-max);
+  margin-inline: auto;
+  padding-inline: var(--esp-6);
+}
+
+.container--estreito {
+  max-width: var(--largura-texto);
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  gap: var(--esp-8);
+}
+
+.grid--2 { grid-template-columns: repeat(2, 1fr); }
+.grid--3 { grid-template-columns: repeat(3, 1fr); }
+.grid--4 { grid-template-columns: repeat(4, 1fr); }
+
+.grid--auto {
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+/* Flex */
+.flex          { display: flex; }
+.flex--centro  { align-items: center; justify-content: center; }
+.flex--entre   { align-items: center; justify-content: space-between; }
+.flex--coluna  { flex-direction: column; }
+.flex--gap-4   { gap: var(--esp-4); }
+.flex--gap-8   { gap: var(--esp-8); }
+
+/* Seção */
+.secao {
+  padding-block: var(--esp-24);
+}
+
+.secao--compacta {
+  padding-block: var(--esp-12);
+}
+
+/* Ratio de imagem */
+.ratio {
+  position: relative;
+  overflow: hidden;
+}
+
+.ratio--16-9::before  { content: ''; display: block; padding-top: 56.25%; }
+.ratio--4-3::before   { content: ''; display: block; padding-top: 75%; }
+.ratio--quadrado::before { content: ''; display: block; padding-top: 100%; }
+
+.ratio > * {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Visualmente oculto (acessibilidade) */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+/* Responsividade base */
+@media (max-width: 1024px) {
+  .grid--4 { grid-template-columns: repeat(2, 1fr); }
+  .grid--3 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .grid--2,
+  .grid--3,
+  .grid--4 { grid-template-columns: 1fr; }
+  .container { padding-inline: var(--esp-4); }
+}

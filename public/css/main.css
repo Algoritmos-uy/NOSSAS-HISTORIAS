@@ -1,0 +1,30 @@
+/* ═══════════════════════════════════════════════════════════════
+   NOSSAS HISTÓRIAS — Main CSS
+   Arquitetura ITCSS (Inverted Triangle CSS)
+   Ordem: Settings → Tools → Generic → Elements → Objects → Components → Trumps
+   ═══════════════════════════════════════════════════════════════ */
+
+/* 1. SETTINGS — Variáveis e tokens de design */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Oswald:wght@300;400;600&family=Lato:wght@300;400;700&display=swap');
+@import './settings/_variaveis.css';
+
+/* 2. TOOLS — Animações e keyframes */
+@import './tools/_animacoes.css';
+
+/* 3. GENERIC — Reset e normalize */
+@import './generic/_reset.css';
+
+/* 4. ELEMENTS — Estilo base de elementos HTML */
+@import './elements/_tipografia.css';
+
+/* 5. OBJECTS — Abstrações de layout */
+@import './objects/_layout.css';
+
+/* 6. COMPONENTS — Componentes de UI */
+@import './components/_header.css';
+@import './components/_hero.css';
+@import './components/_ui.css';
+@import './components/_chatbot.css';
+
+/* 7. TRUMPS — Utilitários e overrides */
+@import './trumps/_utilitarios.css';

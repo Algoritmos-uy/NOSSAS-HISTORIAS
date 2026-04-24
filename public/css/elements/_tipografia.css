@@ -1,0 +1,34 @@
+/* ═══════════════════════════════════════════════════════════════
+   ELEMENTS — Estilo base para elementos HTML
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Tipografia base */
+h1 { font-size: clamp(var(--text-3xl), 6vw, var(--text-5xl)); }
+h2 { font-size: clamp(var(--text-2xl), 4vw, var(--text-4xl)); }
+h3 { font-size: clamp(var(--text-xl), 3vw, var(--text-3xl)); }
+h4 { font-size: var(--text-xl); }
+h5 { font-size: var(--text-lg); }
+h6 { font-size: var(--text-base); }
+
+p {
+  color: var(--cor-areia-escura);
+  line-height: 1.8;
+}
+
+strong { color: var(--cor-areia); font-weight: 700; }
+em     { font-style: italic; color: var(--cor-ouro); }
+
+hr {
+  border: none;
+  border-top: 1px solid rgba(245,230,200,0.15);
+  margin: var(--esp-8) 0;
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar       { width: 6px; }
+::-webkit-scrollbar-track { background: var(--cor-noite); }
+::-webkit-scrollbar-thumb { background: var(--cor-terra); border-radius: var(--raio-full); }
+::-webkit-scrollbar-thumb:hover { background: var(--cor-terra-clara); }
+
+/* Links */
+a:hover { color: var(--cor-terra-clara); }

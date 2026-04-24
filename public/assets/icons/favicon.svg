@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="14" fill="#0F1923"/>
+  <!-- Bússola base -->
+  <circle cx="32" cy="32" r="22" stroke="#C1440E" stroke-width="2" fill="none" opacity="0.4"/>
+  <circle cx="32" cy="32" r="16" fill="#1A2B3C"/>
+  <!-- Agulha norte (terra) -->
+  <polygon points="32,14 29,32 32,30 35,32" fill="#C1440E"/>
+  <!-- Agulha sul -->
+  <polygon points="32,50 29,32 32,34 35,32" fill="#8B7355"/>
+  <!-- Centro -->
+  <circle cx="32" cy="32" r="3" fill="#D4A853"/>
+  <!-- Marcadores cardinais -->
+  <text x="32" y="11" text-anchor="middle" fill="#D4A853" font-size="6" font-family="serif" font-weight="bold">N</text>
+  <text x="32" y="57" text-anchor="middle" fill="#8B7355" font-size="6" font-family="serif">S</text>
+  <text x="57" y="34" text-anchor="middle" fill="#8B7355" font-size="6" font-family="serif">L</text>
+  <text x="7" y="34" text-anchor="middle" fill="#8B7355" font-size="6" font-family="serif">O</text>
+</svg>

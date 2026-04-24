@@ -1,0 +1,75 @@
+/* ═══════════════════════════════════════════════════════════════
+   SETTINGS — Design Tokens
+  Nossas Histórias | Ricardo e Tami
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+  /* ── Paleta ──────────────────────────────────────────────── */
+  --cor-terra: #c1440e; /* laranja queimado — o caminho */
+  --cor-terra-escura: #8b2e06;
+  --cor-terra-clara: #e8601a;
+  --cor-areia: #f5e6c8; /* areia do deserto */
+  --cor-areia-escura: #d4c4a0;
+  --cor-noite: #0f1923; /* céu noturno na estrada */
+  --cor-noite-media: #1a2b3c;
+  --cor-noite-clara: #243447;
+  --cor-verde-mata: #2d6a4f; /* matas da América */
+  --cor-verde-clara: #52b788;
+  --cor-neve: #f8f4ee; /* neve do Alasca */
+  --cor-branco: #ffffff;
+  --cor-cinza-quente: #8b7355;
+  --cor-ouro: #d4a853; /* sol na estrada */
+
+  /* ── Tipografia ──────────────────────────────────────────── */
+  --fonte-titulo: "Playfair Display", Georgia, serif;
+  --fonte-subtitulo: "Oswald", "Arial Narrow", sans-serif;
+  --fonte-corpo: "Lato", Helvetica, sans-serif;
+  --fonte-mono: "Courier New", monospace;
+
+  /* Escala tipográfica */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-md: 1.125rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 2rem;
+  --text-3xl: 2.75rem;
+  --text-4xl: 3.75rem;
+  --text-5xl: 5rem;
+
+  /* ── Espaçamento ─────────────────────────────────────────── */
+  --esp-1: 0.25rem;
+  --esp-2: 0.5rem;
+  --esp-3: 0.75rem;
+  --esp-4: 1rem;
+  --esp-6: 1.5rem;
+  --esp-8: 2rem;
+  --esp-12: 3rem;
+  --esp-16: 4rem;
+  --esp-24: 6rem;
+  --esp-32: 8rem;
+
+  /* ── Bordas ──────────────────────────────────────────────── */
+  --raio-sm: 4px;
+  --raio-md: 8px;
+  --raio-lg: 16px;
+  --raio-xl: 24px;
+  --raio-full: 9999px;
+
+  /* ── Sombras ─────────────────────────────────────────────── */
+  --sombra-sm: 0 2px 8px rgba(15, 25, 35, 0.15);
+  --sombra-md: 0 8px 32px rgba(15, 25, 35, 0.2);
+  --sombra-lg: 0 20px 60px rgba(15, 25, 35, 0.3);
+  --sombra-terra: 0 8px 32px rgba(193, 68, 14, 0.3);
+
+  /* ── Transições ──────────────────────────────────────────── */
+  --trans-rapida: 0.15s ease;
+  --trans-media: 0.3s ease;
+  --trans-lenta: 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  /* ── Layout ──────────────────────────────────────────────── */
+  --largura-max: 1280px;
+  --largura-texto: 760px;
+  --header-h: 72px;
+}
