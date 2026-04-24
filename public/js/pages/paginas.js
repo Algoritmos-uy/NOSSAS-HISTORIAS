@@ -318,10 +318,12 @@ export async function renderContato() {
               ${[
                 { emoji: '🎥', titulo: 'YouTube', desc: 'Canal Nossas Histórias<br>Novos vídeos toda semana', link: 'https://youtube.com/@canalnossashistorias', label: 'Acessar canal' },
                 { emoji: '📷', titulo: 'Instagram', desc: 'Fotos e stories do dia a dia<br>na estrada', link: 'https://instagram.com/nossashistoriasoficial', label: 'Seguir no Instagram' },
-                { emoji: '🦫', titulo: 'Frederico', desc: 'Nossa IA guia está sempre<br>disponível no site', link: '#', label: 'Conversar agora', id: 'contato-historinha-btn' }
+                { avatar: '/assets/img/frederico.png', titulo: 'Frederico', desc: 'Nossa IA guia está sempre<br>disponível no site', link: '#', label: 'Conversar agora', id: 'contato-historinha-btn' }
               ].map(item => `
                 <div style="display:flex; gap:var(--esp-4); padding:var(--esp-6); background:var(--cor-noite-clara); border-radius:var(--raio-lg); border:1px solid rgba(245,230,200,0.08); margin-bottom:var(--esp-4); transition: border-color var(--trans-media);">
-                  <span style="font-size:2rem; flex-shrink:0;" aria-hidden="true">${item.emoji}</span>
+                  ${item.avatar
+                    ? `<img src="${item.avatar}" alt="" aria-hidden="true" style="width:2.25rem; height:2.25rem; border-radius:50%; object-fit:cover; flex-shrink:0;" />`
+                    : `<span style="font-size:2rem; flex-shrink:0;" aria-hidden="true">${item.emoji}</span>`}
                   <div>
                     <p style="font-family:var(--fonte-titulo); color:var(--cor-neve); margin-bottom:var(--esp-1);">${item.titulo}</p>
                     <p style="font-size:var(--text-sm); color:var(--cor-areia-escura); margin-bottom:var(--esp-3);">${item.desc}</p>
