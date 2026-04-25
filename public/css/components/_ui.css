@@ -650,6 +650,20 @@
   font-weight: 900;
 }
 
+.faixa-rota__icone {
+  width: clamp(44px, 3vw, 58px);
+  height: clamp(44px, 3vw, 58px);
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid rgba(245, 230, 200, 0.18);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.28);
+}
+
+.faixa-rota__icone--direita {
+  margin-left: var(--esp-2);
+}
+
 .faixa-rota__info {
   flex: 1;
 }
@@ -669,6 +683,54 @@
   color: var(--cor-neve);
 }
 
+@media (min-width: 1025px) {
+  .grid--numeros-aventura {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--esp-6);
+  }
+
+  .grid--numeros-aventura > .faixa-rota {
+    min-width: 0;
+    min-height: 170px;
+    padding: var(--esp-7) var(--esp-8);
+    gap: var(--esp-6);
+  }
+
+  .grid--numeros-aventura .faixa-rota__numero {
+    font-size: clamp(var(--text-4xl), 2.8vw, var(--text-5xl));
+  }
+
+  .grid--numeros-aventura .faixa-rota__icone {
+    width: clamp(42px, 2.4vw, 54px);
+    height: clamp(42px, 2.4vw, 54px);
+  }
+
+  .grid--numeros-aventura .faixa-rota__info {
+    min-width: 0;
+  }
+
+  .grid--numeros-aventura .faixa-rota--duplo-icone {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    column-gap: var(--esp-4);
+  }
+
+  .grid--numeros-aventura .faixa-rota--duplo-icone .faixa-rota__info {
+    text-align: center;
+  }
+
+  .grid--numeros-aventura .faixa-rota--duplo-icone .faixa-rota__icone--direita {
+    margin-left: 0;
+  }
+
+  .grid--numeros-aventura .faixa-rota__label,
+  .grid--numeros-aventura .faixa-rota__valor {
+    overflow-wrap: anywhere;
+    line-height: 1.35;
+  }
+}
+
 @media (max-width: 640px) {
   .faixa-rota {
     flex-wrap: wrap;
@@ -677,5 +739,10 @@
   }
   .faixa-rota__numero {
     font-size: var(--text-3xl);
+  }
+
+  .faixa-rota__icone {
+    width: 42px;
+    height: 42px;
   }
 }

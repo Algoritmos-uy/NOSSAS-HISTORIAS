@@ -83,19 +83,24 @@ export async function renderHome() {
     <!-- ESTATÍSTICAS DA AVENTURA -->
     <section class="secao secao--compacta" aria-label="Números da aventura" style="background: var(--cor-noite-media); border-top: 1px solid rgba(245,230,200,0.06);">
       <div class="container">
-        <div class="grid grid--4" role="list">
+  <div class="grid grid--4 grid--numeros-aventura" role="list">
           ${[
-            { num: '14+', label: 'Países Visitados', emoji: '🌎' },
+            { num: '19', label: 'Países Visitados', emoji: '🌎' },
             { num: '60.000+', label: 'Km Percorridos', emoji: '🛣️' },
-            { num: '2', label: 'Aventureiros', emoji: '💑' },
-            { num: '🇲🇽', label: 'Agora no México!', emoji: '📍' }
+            { num: '3', label: 'Aventureiros', avatar: '/assets/img/ricardo-tami-2.png', avatarDireita: '/assets/img/frederico-mochila.png' },
+            { num: '🇲🇽', label: 'Agora no México!', avatar: '/assets/img/mexico.png' }
           ].map(stat => `
-            <div class="faixa-rota" role="listitem">
-              <span class="faixa-rota__numero" aria-hidden="true">${stat.emoji}</span>
+            <div class="faixa-rota ${stat.avatarDireita ? 'faixa-rota--duplo-icone' : ''}" role="listitem">
+              ${stat.avatar
+                ? `<img src="${stat.avatar}" alt="" aria-hidden="true" class="faixa-rota__icone" />`
+                : `<span class="faixa-rota__numero" aria-hidden="true">${stat.emoji}</span>`}
               <div class="faixa-rota__info">
                 <p class="faixa-rota__label">${stat.label}</p>
                 <p class="faixa-rota__valor">${stat.num}</p>
               </div>
+              ${stat.avatarDireita
+                ? `<img src="${stat.avatarDireita}" alt="" aria-hidden="true" class="faixa-rota__icone faixa-rota__icone--direita" />`
+                : ''}
             </div>
           `).join('')}
         </div>
@@ -275,7 +280,11 @@ export function renderFooter() {
 
         <div class="footer__rodape">
           <p class="footer__copy">© 2024 Nossas Histórias • Ricardo e Tami • Feito com ❤️ na estrada</p>
-          <p class="footer__copy">Conversa com a Historinha 🦫 — nossa guia virtual</p>
+          <p class="footer__copy" style="display:flex; align-items:center; justify-content:center; gap:0.4rem; flex-wrap:wrap;">
+            Conversa com o Frederico
+            <img src="/assets/img/frederico.png" alt="Frederico" style="width:1.1rem; height:1.1rem; border-radius:50%; object-fit:cover;" />
+            — nosso guia virtual
+          </p>
         </div>
       </div>
     </footer>

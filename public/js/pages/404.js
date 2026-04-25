@@ -12,8 +12,8 @@ export function render404() {
           <div style="text-align:center; max-width:560px; margin-inline:auto;">
 
             <!-- Animação bússola perdida -->
-            <div style="font-size:6rem; margin-bottom:var(--esp-6); animation: rodando 8s linear infinite; display:inline-block;" aria-hidden="true">
-              🦫
+            <div style="margin-bottom:var(--esp-6); animation: rodando 8s linear infinite; display:inline-block;" aria-hidden="true">
+              <img src="/assets/img/frederico.png" alt="" style="width:6rem; height:6rem; border-radius:50%; object-fit:cover; display:block;" />
             </div>
 
             <p style="
