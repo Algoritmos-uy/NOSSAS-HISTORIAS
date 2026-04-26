@@ -5,20 +5,24 @@
 
 :root {
   /* ── Paleta ──────────────────────────────────────────────── */
-  --cor-terra: #c1440e; /* laranja queimado — o caminho */
-  --cor-terra-escura: #8b2e06;
-  --cor-terra-clara: #e8601a;
-  --cor-areia: #f5e6c8; /* areia do deserto */
-  --cor-areia-escura: #d4c4a0;
+  --cor-terra: #e24f17; /* laranja queimado — o caminho */
+  --cor-terra-escura: #a83200;
+  --cor-terra-clara: #ff6a24;
+  --cor-areia: #fff; /* areia do deserto */
+  --cor-areia-escura: #fff;
   --cor-noite: #0f1923; /* céu noturno na estrada */
   --cor-noite-media: #1a2b3c;
   --cor-noite-clara: #243447;
-  --cor-verde-mata: #2d6a4f; /* matas da América */
-  --cor-verde-clara: #52b788;
-  --cor-neve: #f8f4ee; /* neve do Alasca */
+  --cor-verde-mata: #1f8d57; /* matas da América */
+  --cor-verde-clara: #29d98c;
+  --cor-neve: #fff; /* neve do Alasca */
   --cor-branco: #ffffff;
   --cor-cinza-quente: #8b7355;
-  --cor-ouro: #d4a853; /* sol na estrada */
+  --cor-ouro: #f0ba3e; /* sol na estrada */
+
+  /* Header */
+  --header-bg-scrolled: rgba(15, 25, 35, 0.95);
+  --header-bg-mobile: rgba(15, 25, 35, 0.92);
 
   /* ── Tipografia ──────────────────────────────────────────── */
   --fonte-titulo: "Playfair Display", Georgia, serif;
@@ -61,7 +65,7 @@
   --sombra-sm: 0 2px 8px rgba(15, 25, 35, 0.15);
   --sombra-md: 0 8px 32px rgba(15, 25, 35, 0.2);
   --sombra-lg: 0 20px 60px rgba(15, 25, 35, 0.3);
-  --sombra-terra: 0 8px 32px rgba(193, 68, 14, 0.3);
+  --sombra-terra: 0 8px 32px rgba(226, 79, 23, 0.34);
 
   /* ── Transições ──────────────────────────────────────────── */
   --trans-rapida: 0.15s ease;
@@ -72,4 +76,35 @@
   --largura-max: 1280px;
   --largura-texto: 760px;
   --header-h: 72px;
+}
+
+/* ── Tema claro (alegre, discreto e latino) ───────────────────
+   Ativado quando o elemento raiz possuir: data-theme="light"
+   Mantém os mesmos tokens para compatibilidade total dos componentes. */
+:root[data-theme="light"] {
+  /* Base cromática inspirada em América Latina:
+     terracota solar, verde tropical, azul caribenho e dourado quente. */
+  --cor-terra: #d9480f;
+  --cor-terra-escura: #a83808;
+  --cor-terra-clara: #ff6a1a;
+  --cor-areia: #000;
+  --cor-areia-escura: #000;
+  --cor-noite: #fff9f0;
+  --cor-noite-media: #fffdf8;
+  --cor-noite-clara: #f4efe5;
+  --cor-verde-mata: #0f8a43;
+  --cor-verde-clara: #19c37d;
+  --cor-neve: #000;
+  --cor-branco: #ffffff;
+  --cor-cinza-quente: #333333;
+  --cor-ouro: #c98300;
+
+  --header-bg-scrolled: rgba(255, 249, 240, 0.94);
+  --header-bg-mobile: rgba(255, 249, 240, 0.97);
+
+  /* Sombras ajustadas para superfícies claras */
+  --sombra-sm: 0 2px 10px rgba(35, 69, 107, 0.1);
+  --sombra-md: 0 10px 34px rgba(35, 69, 107, 0.14);
+  --sombra-lg: 0 20px 56px rgba(35, 69, 107, 0.18);
+  --sombra-terra: 0 8px 28px rgba(201, 90, 43, 0.22);
 }

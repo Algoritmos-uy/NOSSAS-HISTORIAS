@@ -6,6 +6,7 @@
 import { registrarRota, iniciarRouter, navegar } from './modules/router.js';
 import { iniciarHeader }                          from './modules/header.js';
 import { iniciarHistorinha }                      from './modules/historinha.js';
+import { initializeI18n }                         from './modules/i18n.js';
 import { reiniciarScrollReveal }                  from './modules/scroll-reveal.js';
 import { renderHome }                             from './pages/home.js';
 import { render404 }                              from './pages/404.js';
@@ -94,9 +95,14 @@ document.addEventListener('pagina-carregada', e => {
   reiniciarScrollReveal();
 });
 
+document.addEventListener('idioma-alterado', () => {
+  navegar(window.location.pathname, false);
+});
+
 // ── Inicialização ────────────────────────────────────────────
 
 function iniciarApp() {
+  initializeI18n();
   iniciarHeader();
   iniciarHistorinha();
   iniciarRouter();

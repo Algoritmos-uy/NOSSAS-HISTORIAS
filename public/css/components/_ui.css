@@ -42,6 +42,7 @@
 
 .btn--primario:hover {
   background: var(--cor-terra-clara);
+  color: var(--cor-neve);
   transform: translateY(-2px);
   box-shadow: 0 12px 40px rgba(193, 68, 14, 0.4);
 }
@@ -66,6 +67,7 @@
 
 .btn--ouro:hover {
   background: #e8bb66;
+  color: var(--cor-noite);
   transform: translateY(-2px);
 }
 
@@ -257,15 +259,29 @@
 .card-curiosidade__pergunta {
   font-family: var(--fonte-titulo);
   font-size: var(--text-lg);
-  color: var(--cor-neve);
+  color: #fff;
   margin-bottom: var(--esp-3);
   line-height: 1.4;
 }
 
 .card-curiosidade__resposta {
   font-size: var(--text-sm);
-  color: var(--cor-areia-escura);
+  color: #fff;
   line-height: 1.7;
+}
+
+:root[data-theme="light"] .card-curiosidade {
+  border-color: rgba(201, 90, 43, 0.18);
+}
+
+:root[data-theme="light"] .card-curiosidade:hover {
+  border-color: rgba(201, 90, 43, 0.35);
+  background: #f3e7d3;
+}
+
+:root[data-theme="light"] .card-curiosidade__pergunta,
+:root[data-theme="light"] .card-curiosidade__resposta {
+  color: #000;
 }
 
 /* ── Seção cabeçalho ─────────────────────────────────────────── */

@@ -3,14 +3,7 @@
 // ═══════════════════════════════════════════════════════════════
 
 import { chatbot as apiChatbot } from './api.js';
-
-const SUGESTOES = [
-  'Quem são Ricardo e Tami?',
-  'Já chegaram no México? 🇲🇽',
-  'Como é a Frontier?',
-  'A rota até o Alasca',
-  'O que tem na loja?'
-];
+import { getCurrentLanguage, t } from './i18n.js';
 
 export function iniciarHistorinha() {
   const toggle   = document.getElementById('historinha-toggle');
@@ -37,7 +30,7 @@ export function iniciarHistorinha() {
     if (aberto && msgs.children.length === 0) {
       // Mensagem de boas-vindas
       setTimeout(() => adicionarMensagemBot(
-  'Oi! Eu sou Frederico, seu companheiro de aventura nesse site! 🗺️ Pergunta qualquer coisa sobre Ricardo e Tami, a viagem, o canal... pode falar!'
+        t('chatbot.welcome')
       ), 400);
       renderizarSugestoes();
     }
@@ -52,7 +45,13 @@ export function iniciarHistorinha() {
 
   // ── Sugestões rápidas ────────────────────────────────────────
   function renderizarSugestoes() {
-    sugestoesEl.innerHTML = SUGESTOES.map(s =>
+    const sugestoes = t('chatbot.suggestions', []);
+    if (!Array.isArray(sugestoes) || !sugestoes.length) {
+      sugestoesEl.innerHTML = '';
+      return;
+    }
+
+    sugestoesEl.innerHTML = sugestoes.map(s =>
       `<button class="historinha__chip" type="button">${s}</button>`
     ).join('');
 
@@ -79,12 +78,12 @@ export function iniciarHistorinha() {
     const digitandoId = mostrarDigitando();
 
     try {
-      const res = await apiChatbot.enviar(msg);
+      const res = await apiChatbot.enviar(msg, getCurrentLanguage());
       removerDigitando(digitandoId);
       adicionarMensagemBot(res.resposta);
     } catch {
       removerDigitando(digitandoId);
-      adicionarMensagemBot('Ops! Tive um problema de sinal por aqui... tenta de novo! 📡');
+      adicionarMensagemBot(t('chatbot.errorSignal'));
     }
   }
 

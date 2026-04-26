@@ -56,9 +56,9 @@ export const loja = {
 // ── Chatbot ──────────────────────────────────────────────────
 
 export const chatbot = {
-  enviar: mensagem => requisitar('/chatbot/mensagem', {
+  enviar: (mensagem, idioma) => requisitar('/chatbot/mensagem', {
     method: 'POST',
-    body: JSON.stringify({ mensagem })
+    body: JSON.stringify({ mensagem, idioma })
   })
 };
 
