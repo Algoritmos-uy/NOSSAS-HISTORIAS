@@ -17,7 +17,7 @@ export async function renderHome() {
           src="/assets/img/banner-N-H-1200.png"
           alt="Banner Nossas Histórias"
           width="1200"
-          height="441"
+          height="460"
           loading="eager"
           decoding="async"
         />
@@ -279,6 +279,9 @@ export function renderFooter() {
         </div>
 
         <div class="footer__rodape">
+          <h2 style="text-align:center; margin:0 0 var(--esp-4); font-size:clamp(1rem, 2.2vw, 1.25rem); font-family:var(--fonte-subtitulo); letter-spacing:0.04em;">
+            Developed By: <a href="https://algoritmos.uy" target="_blank" rel="noopener" style="color:var(--cor-ouro); text-decoration:underline;">Willans Junes</a>
+          </h2>
           <p class="footer__copy">© 2024 Nossas Histórias • Ricardo e Tami • Feito com ❤️ na estrada</p>
           <p class="footer__copy" style="display:flex; align-items:center; justify-content:center; gap:0.4rem; flex-wrap:wrap;">
             Conversa com o Frederico
